@@ -4,9 +4,6 @@
  * The ajax call back
  */
 function wp_swift_submit_location_search_form_callback() {
-    // echo "hello";
-    // die();    
-    // // write_log("wp_swift_submit_location_search_form_callback");
     check_ajax_referer( 'location-search-nonce', 'security' );
 
 
