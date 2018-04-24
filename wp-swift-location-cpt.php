@@ -87,6 +87,9 @@ require_once plugin_dir_path( __FILE__ ) . 'class-admin-interface-settings.php';
  */
 require plugin_dir_path( __FILE__ ) . 'cpt/cpt.php';
 
+
+require plugin_dir_path( __FILE__ ) . 'acf-field-groups/_location-details.php';
+
 /*
 */
 require plugin_dir_path( __FILE__ ) . '_shortcodes.php';

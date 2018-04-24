@@ -12,6 +12,7 @@
     var locationSelect = document.getElementById("locationSelect");
     var htmlResults = document.getElementById('html-results');
     var showDebug = true;
+    var searchDestinationLat = {};
 
     function Route() {
         this.origin = {
@@ -29,8 +30,8 @@
 
     // Expose to global
     window.initializeMapServices = function initializeMapServices() {
-        initMap();  
-        initAutocomplete();   
+        // initMap();  
+        // initAutocomplete();   
     };
 
     // Bias the autocomplete object to the user's geographical location,

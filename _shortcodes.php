@@ -239,7 +239,7 @@ function wp_swift_map() {
 function wp_swift_map_html( $marker_nodes ) {
 	ob_start();
 	?>
-		<div id="map-container" class="_hide" style="margin-bottom: 1rem">
+		<div id="map-container">
 			<div id="map" style="width: 100%; height: 400px; position: relative;" data-markers="<?php echo $marker_nodes; ?>"></div>
 		</div>
 	<?php

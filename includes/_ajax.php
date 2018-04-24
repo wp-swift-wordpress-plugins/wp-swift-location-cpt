@@ -62,17 +62,6 @@ if (   (isset($_POST["lat"]) && $_POST["lat"] != '')
 add_action( 'wp_ajax_wp_swift_submit_location_search_form', 'wp_swift_submit_location_search_form_callback' );
 add_action( 'wp_ajax_nopriv_wp_swift_submit_location_search_form', 'wp_swift_submit_location_search_form_callback' );
 
-
-if ( ! function_exists('write_log')) {
-   function write_log ( $log )  {
-      if ( is_array( $log ) || is_object( $log ) ) {
-         error_log( print_r( $log, true ) );
-      } else {
-         error_log( $log );
-      }
-   }
-}
-
 function locations_html($locations, $address, $lat, $lng, $radius, $cats) {
     ob_start();
     $html = '';

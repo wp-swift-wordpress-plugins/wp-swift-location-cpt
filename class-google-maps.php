@@ -1,16 +1,5 @@
 <?php
 /*
-Plugin Name:        WP Swift: Google Map
-Plugin URI:         https://github.com/GarySwift/wp-swift-admin-menu
-Description:        Google Maps
-Version:            1.0.0
-Author:             Gary Swift
-Author URI:         https://github.com/GarySwift
-License:            GPL-2.0+
-License URI:        http://www.gnu.org/licenses/gpl-2.0.txt
-Text Domain:        wp-swift-google-map
-*/
-/*
  * Declare a new class that will handle opening hors
  * 
  * @class       WP_Swift_Google_Maps
