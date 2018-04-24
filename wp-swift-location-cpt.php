@@ -88,7 +88,7 @@ require_once plugin_dir_path( __FILE__ ) . 'class-admin-interface-settings.php';
 require plugin_dir_path( __FILE__ ) . 'cpt/cpt.php';
 
 
-// require plugin_dir_path( __FILE__ ) . 'acf-field-groups/_location-details.php';
+require plugin_dir_path( __FILE__ ) . 'acf-field-groups/_location-details.php';
 
 /*
 */
@@ -115,6 +115,8 @@ require plugin_dir_path( __FILE__ ) . 'includes/_ajax.php';
 require plugin_dir_path( __FILE__ ) . 'includes/_process-location-search-form.php';
 require plugin_dir_path( __FILE__ ) . 'includes/_ajax-html-results.php';
 
+/* Helpers */
+require plugin_dir_path( __FILE__ ) . 'includes/_helper-functions.php';
 
 # Register the Google API key to use with Advanced Custum Fields
 add_action('acf/init', 'wp_swift_acf_init');
