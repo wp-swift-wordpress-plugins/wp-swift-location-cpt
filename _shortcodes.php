@@ -295,7 +295,7 @@ function wp_swift_location_enqueue_script() {
 	$key = wp_swift_get_google_api_key();
 	if ($key) {
 
-		write_log(plugin_dir_path( __FILE__ ) . 'public/js/wp-swift-location-cpt-public.js');
+		// write_log(plugin_dir_path( __FILE__ ) . 'public/js/wp-swift-location-cpt-public.js');
 		$js_version = filemtime( plugin_dir_path( __FILE__ ) . 'public/js/wp-swift-location-cpt-public.js' );
 		wp_enqueue_script( 
 			'wp-swift-location-cpt-js', 
@@ -312,4 +312,25 @@ function wp_swift_location_enqueue_script() {
 			true 
 		);
 	}
+	$options = get_option( 'wp_swift_google_map_settings' );
+
+	if (isset($options['show_sidebar_options_google_map_style'])) {
+        $styles = trim($options['show_sidebar_options_google_map_style']);
+    }
+	if (isset($options['zoom_level_select'])) {
+        $zoom = trim($options['zoom_level_select']);
+    } 
+
+    if ($styles || $zoom) {
+    	$settings = array();
+     	if ($styles) {
+     		$settings["styles"] = $styles;
+     	}
+     	if ($zoom) {
+     		$settings["zoom"] = (int) $zoom;
+     	}
+     	wp_localize_script( 'wp-swift-location-cpt-js', 'MapGlobalSettings', $settings);     	
+    } 
+
+      
 }

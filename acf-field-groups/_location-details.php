@@ -1,53 +1,72 @@
 <?php
 if( function_exists('acf_add_local_field_group') ):
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_5a3d1a6f0c23f',
 	'title' => 'Location Details',
-	'fields' => array (
-		array (
-			'key' => 'field_5a85dd18171b2',
-			'label' => 'Phone',
-			'name' => 'phone',
-			'type' => 'clone',
+	'fields' => array(
+		array(
+			'key' => 'field_5adef69b22cfd',
+			'label' => 'Contact Numbers',
+			'name' => 'contact_numbers',
+			'type' => 'repeater',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'clone' => array (
-				0 => 'group_5a85dafc98e2e',
+			'collapsed' => 'field_5adef743dc715',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'table',
+			'button_label' => '',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_5adef743dc715',
+					'label' => 'Label',
+					'name' => 'label',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '30',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_5adef6dc22cff',
+					'label' => 'Number',
+					'name' => 'number',
+					'type' => 'clone',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'clone' => array(
+						0 => 'group_5a85dafc98e2e',
+					),
+					'display' => 'seamless',
+					'layout' => 'block',
+					'prefix_label' => 0,
+					'prefix_name' => 0,
+				),
 			),
-			'display' => 'seamless',
-			'layout' => 'block',
-			'prefix_label' => 1,
-			'prefix_name' => 1,
 		),
-		array (
-			'key' => 'field_5a3d1a6f0fa45',
-			'label' => 'Mobile',
-			'name' => 'mobile',
-			'type' => 'clone',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'clone' => array (
-				0 => 'group_5a85dafc98e2e',
-			),
-			'display' => 'seamless',
-			'layout' => 'block',
-			'prefix_label' => 1,
-			'prefix_name' => 1,
-		),
-		array (
+		array(
 			'key' => 'field_5a3d1a6f0fa5c',
 			'label' => 'Email',
 			'name' => 'email',
@@ -55,7 +74,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -65,7 +84,7 @@ acf_add_local_field_group(array (
 			'prepend' => '',
 			'append' => '',
 		),
-		array (
+		array(
 			'key' => 'field_5a3d1a6f0fab5',
 			'label' => 'Address',
 			'name' => 'address',
@@ -73,7 +92,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -84,7 +103,7 @@ acf_add_local_field_group(array (
 			'rows' => 5,
 			'new_lines' => 'br',
 		),
-		array (
+		array(
 			'key' => 'field_5a3d1a6f0faeb',
 			'label' => 'Opening Hours',
 			'name' => 'opening_hours',
@@ -92,7 +111,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -103,7 +122,7 @@ acf_add_local_field_group(array (
 			'rows' => 2,
 			'new_lines' => 'br',
 		),
-		array (
+		array(
 			'key' => 'field_5a81e5599a3ec',
 			'label' => 'Map',
 			'name' => 'map',
@@ -111,7 +130,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -122,9 +141,9 @@ acf_add_local_field_group(array (
 			'height' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'location',
@@ -141,11 +160,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_5a85dafc98e2e',
 	'title' => 'Phone Group',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_5a85db03e4dc0',
 			'label' => 'Number',
 			'name' => 'number',
@@ -153,14 +172,14 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => 'clone-phone-group',
 				'id' => '',
 			),
 			'layout' => 'table',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_5a85db12e4dc1',
 					'label' => 'Country Code',
 					'name' => 'country_code',
@@ -168,7 +187,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '25',
 						'class' => 'phone-group-country-code',
 						'id' => '',
@@ -179,7 +198,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5a85db3fe4dc2',
 					'label' => 'Area Code',
 					'name' => 'area_code',
@@ -187,7 +206,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '25',
 						'class' => 'phone-group-area-code',
 						'id' => '',
@@ -198,7 +217,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5a85db7ee4dc3',
 					'label' => 'Number',
 					'name' => 'number',
@@ -206,7 +225,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '50',
 						'class' => 'phone-group-number',
 						'id' => '',
@@ -220,9 +239,9 @@ acf_add_local_field_group(array (
 			),
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'post',

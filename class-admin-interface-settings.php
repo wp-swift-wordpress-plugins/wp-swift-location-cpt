@@ -94,22 +94,22 @@ class WP_Swift_Locations_CPT_Admin_Interface_Settings {
             array( 'label_for' => 'google-map-api-key' )
         );
 
-        // add_settings_field( 
-        //     'show_sidebar_options_google_map_style', 
-        //     __( 'Google Map Style', $this->text_domain ), 
-        //     array($this, 'show_sidebar_options_google_map_style_render'), 
-        //     $this->text_domain, 
-        //     'wp_swift_admin_menu_google_map_page_section',
-        //     array( 'label_for' => 'google-map-style' ) 
-        // );
+        add_settings_field( 
+            'show_sidebar_options_google_map_style', 
+            __( 'Google Map Style', $this->text_domain ), 
+            array($this, 'show_sidebar_options_google_map_style_render'), 
+            $this->text_domain, 
+            'wp_swift_admin_menu_google_map_page_section',
+            array( 'label_for' => 'google-map-style' ) 
+        );
 
-        // add_settings_field( 
-        //     'zoom_level_select', 
-        //     __( 'Map Zoom Level', $this->text_domain ), 
-        //     array($this, 'zoom_level_select_render'), 
-        //     $this->text_domain, 
-        //     'wp_swift_admin_menu_google_map_page_section' 
-        // );  
+        add_settings_field( 
+            'zoom_level_select', 
+            __( 'Map Zoom Level', $this->text_domain ), 
+            array($this, 'zoom_level_select_render'), 
+            $this->text_domain, 
+            'wp_swift_admin_menu_google_map_page_section' 
+        );  
 
         // add_settings_field( 
         //     'show_sidebar_options_google_directions', 
