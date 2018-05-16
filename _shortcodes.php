@@ -321,7 +321,7 @@ function wp_swift_location_enqueue_script() {
         $zoom = trim($options['zoom_level_select']);
     } 
 
-    if ($styles || $zoom) {
+    if (isset($styles) || isset($zoom)) {
     	$settings = array();
      	if ($styles) {
      		$settings["styles"] = $styles;

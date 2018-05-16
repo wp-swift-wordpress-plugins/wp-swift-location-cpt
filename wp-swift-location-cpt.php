@@ -195,3 +195,126 @@ run_wp_swift_location_cpt();
 // }
 // add_filter( 'custom_menu_order', '__return_true' );
 // add_filter( 'menu_order', 'wp_swift_media_custom_menu_order' );
+
+function get_contact_details($post_id = null) {
+    $args = array(
+        'posts_per_page'    => 1,
+        'post_type'            => 'location',   
+    );
+    if ($post_id) {
+        $args["post__in"] = array($post_id);
+    }
+    $posts = get_posts($args);
+    $count = count($posts);
+
+        // $name = '';
+        // $email = '';
+        // $tel = array();
+        // $address = '';
+        // $opening_hours = '';
+
+         
+
+    if ($count == 1 ) {
+        // $post = $posts[0];
+        // $post_id = $post->ID;
+
+        $location = new WP_Swift_Location_Manager($posts[0]);
+        // $location->set_email( $post->post_title );
+
+
+
+
+
+        // if ( get_field('email', $post_id) ) {
+        //     $email = get_field('email', $post_id);
+        //     $location->set_email( get_field('email', $post_id) );
+        // }
+        // if ( have_rows('contact_numbers', $post_id) ) {
+        //     while( have_rows('contact_numbers', $post_id) ) {
+        //         the_row();             
+        //         $label = get_sub_field('label'); 
+        //         $number = get_sub_field('number');   
+        //         $number = wp_swift_process_number_link($number);   
+        //         $tel[] = array( 
+        //             "label" => $label,
+        //             "number" => $number,
+        //         );  
+        //     }
+        //     $location->set_tel( $tel ); 
+        // }  
+    }
+    else {
+        $location = new WP_Swift_Location_Manager();
+    }
+    return $location;
+}
+
+require plugin_dir_path( __FILE__ ) . 'class-wp-swift-location-manager.php';
+
+// [bartag foo="foo-value"]
+function phone_func( $atts ) {
+    $a = shortcode_atts( array(
+        'label' => '',
+        'tag' => '',
+    ), $atts );
+    $location = get_contact_details();
+    ob_start();
+    $location->get_tel($a['label'], $a['tag']);
+    $html = ob_get_contents();
+    ob_end_clean();
+    
+    return $html;
+}
+add_shortcode( 'phone', 'phone_func' );
+
+function email_func( $atts ) {
+    $a = shortcode_atts( array(
+        'label' => '',
+        'tag' => '',
+    ), $atts );
+    $location = get_contact_details();
+    ob_start();
+    $location->get_email($a['label'], $a['tag']);
+    $html = ob_get_contents();
+    ob_end_clean();
+    
+    return $html;
+}
+add_shortcode( 'email', 'email_func' );
+
+function address_func( $atts ) {
+    $location = get_contact_details();
+    ob_start();
+    $location->get_address();
+    $html = ob_get_contents();
+    ob_end_clean();
+    
+    return $html;
+}
+add_shortcode( 'address', 'address_func' );
+
+function opening_hours_func( $atts ) {
+    $location = get_contact_details();
+    ob_start();
+    $location->get_opening_hours();
+    $html = ob_get_contents();
+    ob_end_clean();
+    
+    return $html;
+}
+add_shortcode( 'opening_hours', 'opening_hours_func' );
+
+function location_details_func( $atts ) {
+    $location = get_contact_details();    
+    return $location->get_details();
+}
+add_shortcode( 'location_details', 'location_details_func' );
+
+// [bartag foo="foo-value"]
+function bartag_func( $atts ) {
+
+
+    return "foo = {$a['foo']}";
+}
+add_shortcode( 'bartag', 'bartag_func' );

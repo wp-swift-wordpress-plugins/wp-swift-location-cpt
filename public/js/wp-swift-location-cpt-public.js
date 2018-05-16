@@ -1,3 +1,4 @@
+// console.log('MapGlobalSettings', MapGlobalSettings);
 //@start closure
 (function() {
     var autocomplete;
@@ -58,11 +59,11 @@
         var zoom = 14;
         var styles = false;
     
-        if(typeof MapGlobalSettings.styles !== "undefined") {
+        if(typeof MapGlobalSettings !== "undefined" && MapGlobalSettings.hasOwnProperty('styles') ) {
           styles = JSON.parse( MapGlobalSettings.styles );
         }
 
-        if(typeof MapGlobalSettings.zoom !== "undefined") {
+        if(typeof MapGlobalSettings !== "undefined" && MapGlobalSettings.hasOwnProperty('zoom') ) {
           zoom = parseFloat( MapGlobalSettings.zoom );
         }
 
@@ -189,10 +190,10 @@
 
     var regionalLocations = function (markerNodes) {
         var zoom = 14;
-        if(typeof MapGlobalSettings.zoom !== "undefined") {
-          zoom = parseInt( MapGlobalSettings.zoom);
-        }  
-     
+        if(typeof MapGlobalSettings !== "undefined" && MapGlobalSettings.hasOwnProperty('zoom') ) {
+          zoom = parseFloat( MapGlobalSettings.zoom );
+        }
+
         if ( markerNodes !== null ) {
 
             clearLocations();
